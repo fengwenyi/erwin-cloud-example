@@ -32,6 +32,7 @@
         <spring-cloud.version>2020.0.1</spring-cloud.version>
         <JavaLib.version>2.1.1</JavaLib.version>
         <api-result.version>2.3.1</api-result.version>
+        <zipkin.version>2.12.9</zipkin.version>
     </properties>
     <dependencies>
         <dependency>
