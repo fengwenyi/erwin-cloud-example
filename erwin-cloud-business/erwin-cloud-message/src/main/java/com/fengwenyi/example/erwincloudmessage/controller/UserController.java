@@ -23,7 +23,6 @@ public class UserController {
 
     @RequestMapping("name")
     public String name(HttpServletRequest request) {
-        log.info("message service, traceId={}, spanId={}", request.getHeader("X-B3-TraceId"), request.getHeader("X-B3-SpanId"));
         return restTemplate.getForEntity("http://erwin-cloud-user/user/getUserName", String.class).getBody();
     }
 
