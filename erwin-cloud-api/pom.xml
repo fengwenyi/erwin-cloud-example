@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>erwin-cloud-example</artifactId>
+        <groupId>com.fengwenyi</groupId>
+        <version>0.0.1-BUILD</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>erwin-cloud-api</artifactId>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>erwin-cloud-user-api</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fengwenyi</groupId>
+            <artifactId>api-result</artifactId>
+            <version>${api-result.version}</version>
+        </dependency>
+    </dependencies>
+</project>

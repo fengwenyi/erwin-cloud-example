@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>erwin-cloud-user</artifactId>
+    <artifactId>erwin-cloud-order</artifactId>
 
     <dependencies>
         <!-- mybatis-plus-boot-starter -->
@@ -22,12 +22,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fengwenyi</groupId>
-            <artifactId>erwin-cloud-user-api</artifactId>
-            <version>0.0.1-BUILD</version>
         </dependency>
     </dependencies>
 

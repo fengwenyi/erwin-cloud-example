@@ -7,6 +7,7 @@
         <module>erwin-cloud-server</module>
         <module>erwin-cloud-common</module>
         <module>erwin-cloud-business</module>
+        <module>erwin-cloud-api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -33,6 +34,8 @@
         <JavaLib.version>2.1.1</JavaLib.version>
         <api-result.version>2.3.1</api-result.version>
         <zipkin.version>2.12.9</zipkin.version>
+        <seata.version>1.4.0</seata.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>
     </properties>
     <dependencies>
         <dependency>
