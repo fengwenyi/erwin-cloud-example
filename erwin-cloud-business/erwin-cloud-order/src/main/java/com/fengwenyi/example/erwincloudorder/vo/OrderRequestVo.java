@@ -2,6 +2,8 @@ package com.fengwenyi.example.erwincloudorder.vo;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * @author Erwin Feng
  * @since 2021-03-08
@@ -9,10 +11,12 @@ import lombok.Data;
 @Data
 public class OrderRequestVo {
 
-    private Long accountId;
+    private Long userId;
 
     private Long productId;
 
     private Integer count;
+
+    private BigDecimal money;
 
 }

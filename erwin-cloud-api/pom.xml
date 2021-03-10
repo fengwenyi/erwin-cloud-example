@@ -15,6 +15,7 @@
 
     <modules>
         <module>erwin-cloud-user-api</module>
+        <module>erwin-cloud-storage-api</module>
     </modules>
 
     <dependencies>

@@ -1,14 +1,16 @@
 package com.fengwenyi.example.erwinclouduser.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fengwenyi.api.result.ResultTemplate;
 import com.fengwenyi.example.erwinclouduser.entity.AccountEntity;
 import com.fengwenyi.example.erwinclouduser.repository.MPAccountRepository;
 import com.fengwenyi.example.erwinclouduser.service.IAccountService;
-import com.fengwenyi.example.erwinclouduser.vo.AccountResponseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
-import java.util.Objects;
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author Erwin Feng
@@ -21,12 +23,21 @@ public class AccountServiceImpl implements IAccountService {
     private MPAccountRepository mpAccountRepository;
 
     @Override
-    public ResultTemplate<AccountResponseVo> findById(Long id) {
-        AccountEntity accountEntity = mpAccountRepository.getById(id);
-        if (Objects.isNull(accountEntity)) {
-            return ResultTemplate.fail();
+    public ResultTemplate<Void> decrease(Long userId, BigDecimal money) {
+        LambdaQueryWrapper<AccountEntity> lambdaQueryWrapper =
+                new LambdaQueryWrapper<AccountEntity>()
+                        .eq(AccountEntity::getUserId, userId);
+        List<AccountEntity> accountEntityList = mpAccountRepository.list(lambdaQueryWrapper);
+        if (CollectionUtils.isEmpty(accountEntityList) || accountEntityList.size() != 1) {
+            return ResultTemplate.fail("用户没有账户 或者 用户账户异常");
         }
-
-        return ResultTemplate.success(accountEntity);
+        AccountEntity accountEntity = accountEntityList.get(0);
+        accountEntity.setResidue(accountEntity.getResidue().subtract(money));
+        accountEntity.setUsed(accountEntity.getUsed().add(money));
+        boolean update = mpAccountRepository.updateById(accountEntity);
+        if (update) {
+            return ResultTemplate.success();
+        }
+        return ResultTemplate.fail("账户扣减金额更新失败");
     }
 }

@@ -36,6 +36,7 @@
         <zipkin.version>2.12.9</zipkin.version>
         <seata.version>1.4.0</seata.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <p6spy.version>3.9.1</p6spy.version>
     </properties>
     <dependencies>
         <dependency>

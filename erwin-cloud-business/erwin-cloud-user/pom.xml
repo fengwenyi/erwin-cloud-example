@@ -29,6 +29,13 @@
             <artifactId>erwin-cloud-user-api</artifactId>
             <version>0.0.1-BUILD</version>
         </dependency>
+
+        <!-- SQL记录器 -->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

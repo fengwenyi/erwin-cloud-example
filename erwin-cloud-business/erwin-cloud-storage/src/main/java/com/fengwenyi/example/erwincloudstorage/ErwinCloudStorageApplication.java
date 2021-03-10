@@ -1,21 +1,19 @@
-package com.fengwenyi.example.erwincloudorder;
+package com.fengwenyi.example.erwincloudstorage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author Erwin Feng
- * @since 2021-03-08
+ * @since 2021-03-09
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
-public class ErwinCloudOrderApplication {
+public class ErwinCloudStorageApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ErwinCloudOrderApplication.class, args);
+        SpringApplication.run(ErwinCloudStorageApplication.class, args);
     }
 
 }

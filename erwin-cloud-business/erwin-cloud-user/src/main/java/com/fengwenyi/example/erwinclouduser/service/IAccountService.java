@@ -1,7 +1,8 @@
 package com.fengwenyi.example.erwinclouduser.service;
 
 import com.fengwenyi.api.result.ResultTemplate;
-import com.fengwenyi.example.erwinclouduser.vo.AccountResponseVo;
+
+import java.math.BigDecimal;
 
 /**
  * @author Erwin Feng
@@ -9,6 +10,11 @@ import com.fengwenyi.example.erwinclouduser.vo.AccountResponseVo;
  */
 public interface IAccountService {
 
-    ResultTemplate<AccountResponseVo> findById(Long id);
-
+    /**
+     * 扣减金额
+     * @param userId
+     * @param money
+     * @return
+     */
+    ResultTemplate<Void> decrease(Long userId, BigDecimal money);
 }

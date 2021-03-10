@@ -1,19 +1,18 @@
 package com.fengwenyi.example.erwinclouduser.api;
 
 import com.fengwenyi.api.result.ResultTemplate;
-import com.fengwenyi.example.erwinclouduser.vo.AccountResponseVo;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.math.BigDecimal;
 
 /**
  * @author Erwin Feng
  * @since 2021-03-08
  */
-@RequestMapping("/account")
+@RequestMapping("/account-api")
 public interface IAccountApi {
 
-    @GetMapping("/query/{accountId}")
-    ResultTemplate<AccountResponseVo> query(@PathVariable Long accountId);
-
+    @GetMapping("/decrease")
+    ResultTemplate<Void> decrease(Long userId, BigDecimal money);
 }

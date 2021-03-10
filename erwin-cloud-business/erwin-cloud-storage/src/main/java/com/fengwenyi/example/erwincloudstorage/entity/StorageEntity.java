@@ -1,6 +1,5 @@
-package com.fengwenyi.example.erwincloudorder.entity;
+package com.fengwenyi.example.erwincloudstorage.entity;
 
-import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -8,8 +7,6 @@ import com.baomidou.mybatisplus.annotation.Version;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
-
-import com.fengwenyi.example.erwincloudorder.entity.enums.OrderStatusEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -20,24 +17,18 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author Erwin Feng
- * @since 2021-03-08
+ * @since 2021-03-09
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("order")
-public class OrderEntity extends Model<OrderEntity> {
+@TableName("storage")
+public class StorageEntity extends Model<StorageEntity> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
-
-    /**
-     * 用户id
-     */
-    @TableField("user_id")
-    private Long userId;
 
     /**
      * 产品id
@@ -46,22 +37,22 @@ public class OrderEntity extends Model<OrderEntity> {
     private Long productId;
 
     /**
-     * 数量
+     * 总库存
      */
-    @TableField("count")
-    private Integer count;
+    @TableField("total")
+    private Integer total;
 
     /**
-     * 金额
+     * 已用库存
      */
-    @TableField("money")
-    private BigDecimal money;
+    @TableField("used")
+    private Integer used;
 
     /**
-     * 订单状态。0：待支付；1：已支付。
+     * 剩余库存
      */
-    @TableField("status")
-    private OrderStatusEnum status;
+    @TableField("residue")
+    private Integer residue;
 
 
     @Override
