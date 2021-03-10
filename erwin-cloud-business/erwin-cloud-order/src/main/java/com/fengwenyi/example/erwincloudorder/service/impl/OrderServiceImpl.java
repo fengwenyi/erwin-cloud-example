@@ -8,8 +8,6 @@ import com.fengwenyi.example.erwincloudorder.feign.IStorageFeignClient;
 import com.fengwenyi.example.erwincloudorder.repository.MPOrderRepository;
 import com.fengwenyi.example.erwincloudorder.service.IOrderService;
 import com.fengwenyi.example.erwincloudorder.vo.OrderRequestVo;
-import com.fengwenyi.example.erwinclouduser.api.IAccountApi;
-import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +33,7 @@ public class OrderServiceImpl implements IOrderService {
     private IAccountFeignClient accountFeignClient;
 
     @Override
-    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
+    //@GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
     public ResultTemplate<Void> create(OrderRequestVo requestVo) {
 
         log.info("--------------->交易开始");
